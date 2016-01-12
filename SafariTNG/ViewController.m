@@ -56,4 +56,21 @@
     
 }
 
+-(void)webView:(UIWebView *)webView didFailLoadWithError:(NSError *)error {
+    
+    UIAlertController *alertControl = [UIAlertController alertControllerWithTitle:@"Gnarly, dude. Something is wrong here." message:error.description preferredStyle:UIAlertControllerStyleAlert];
+    
+    UIAlertAction *goHome = [UIAlertAction actionWithTitle:@"Go Home" style:UIAlertActionStyleDefault handler:^(UIAlertAction * _Nonnull action) {
+        [self loadGivenURL:@"http://www.google.com"];
+    }];
+    
+    UIAlertAction *cancelButton = [UIAlertAction actionWithTitle:@"Cancel" style:UIAlertActionStyleDefault handler:nil];
+    
+    [alertControl addAction:goHome];
+    [alertControl addAction:cancelButton];
+    [self presentViewController:alertControl animated:true completion:nil];
+    
+    
+}
+
 @end
