@@ -8,7 +8,7 @@
 
 #import "ViewController.h"
 
-@interface ViewController () <UIWebViewDelegate>
+@interface ViewController () <UIWebViewDelegate, UITextFieldDelegate>
 
 @property (weak, nonatomic) IBOutlet UIWebView *webView;
 
@@ -21,7 +21,24 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
-    NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+    [self loadGivenURL:@"http://www.google.com"];
+    
+//    NSURL *url = [NSURL URLWithString:@"http://www.google.com"];
+//    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+//    [self.webView loadRequest:request];
+    
+}
+
+-(BOOL)textFieldShouldReturn:(UITextField *)textField {
+    
+    [self loadGivenURL:textField.text];
+    
+    return true;
+}
+
+-(void)loadGivenURL:(NSString *)givenURL {
+    
+    NSURL *url = [NSURL URLWithString:givenURL];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     [self.webView loadRequest:request];
     

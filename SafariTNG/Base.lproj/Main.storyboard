@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -34,18 +35,46 @@
                                     <rect key="frame" x="182" y="291" width="37" height="37"/>
                                 </variation>
                             </activityIndicatorView>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="h2I-jz-DL9">
+                                <rect key="frame" x="-25" y="-30" width="97" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Lht-ih-OLe"/>
+                                </connections>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="h2I-jz-DL9" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="18" id="BjC-H9-iQd"/>
+                            <constraint firstItem="h2I-jz-DL9" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="WY7-uT-IWN"/>
+                            <constraint firstItem="h2I-jz-DL9" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="aHs-Q4-Z1F"/>
+                            <constraint firstItem="h2I-jz-DL9" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="z3q-Jn-4Wi"/>
+                        </constraints>
                         <variation key="default">
                             <mask key="subviews">
                                 <exclude reference="RnG-bL-8yR"/>
                                 <exclude reference="hXp-31-Tpg"/>
+                                <exclude reference="h2I-jz-DL9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <exclude reference="BjC-H9-iQd"/>
+                                <exclude reference="WY7-uT-IWN"/>
+                                <exclude reference="aHs-Q4-Z1F"/>
+                                <exclude reference="z3q-Jn-4Wi"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
                             <mask key="subviews">
                                 <include reference="RnG-bL-8yR"/>
                                 <include reference="hXp-31-Tpg"/>
+                                <include reference="h2I-jz-DL9"/>
+                            </mask>
+                            <mask key="constraints">
+                                <include reference="BjC-H9-iQd"/>
+                                <include reference="WY7-uT-IWN"/>
+                                <include reference="aHs-Q4-Z1F"/>
+                                <include reference="z3q-Jn-4Wi"/>
                             </mask>
                         </variation>
                     </view>
